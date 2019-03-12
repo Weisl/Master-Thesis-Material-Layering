@@ -12,3 +12,6 @@ Solutions proposed in this catalog have been used in different huge video game p
 
 ## License
 This work is published under the conditions of the Creative Commons License Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)—see https://creativecommons.org/licenses/by-nc-nd/4.0/.
+
+## Comments and Critics
+I spent a lot of time and energy writing this thesis. I have tried to make it understandable, logical and practical. I have also tried to meet the high scientific standards. I am not immune to mistakes and I have not always achieved these goals. Please let me know if certain parts are not clear to you and if you agree or disagree with the suggested patterns. Your feedback is most welcome.
