@@ -1,0 +1,49 @@
+\chapter{Design Patterns}\label{chapter:designPatterns}
+
+The previous chapters mainly focused on technical aspects of material layering. This chapter investigates the interdisciplinary concept of design patterns. The purpose and goal of design patterns is described best by Christopher Alexander \cite[p.\,10]{alexander1977pattern}:  
+
+\begin{itquote}
+Each pattern describes a problem which occurs over and over again in our environment, and then describes the core of the solution to that problem, in such a way that you can use this solution a million times over, without ever doing it the same way twice. 
+\end{itquote}% \cite[p.\,10]{alexander1977pattern}.
+
+Christopher Alexander et al. \cites{alexander1977pattern,alexander1979timeless} had a huge impact on many different disciplines. Their books introduce a network of interlinked patterns. The patterns form a language provided in a standardized format. This makes the individual patterns easily understandable. The purpose is to offer pragmatic solution to recurring problems. The patterns should give an explanation for how and why to use them. They make it easy to evaluate, analyze and modify them for the specific situation. Besides, they are interconnected and reference one another. Patterns are seen as modules of a language that can easily be combined and cannot exist as isolated entities \cite[p.\,10--13]{alexander1977pattern}. Although this concept of patterns was initially developed for architecture, it was adopted in many other disciplines. 
+
+Another subject that adopted design patterns is software engineering. Erich Gamma et al. \cite{gamma1995design} introduced a catalog of proven design patterns for object-oriented software engineering. This book contains a collection of solutions that evolved over time and could be applied to all kinds of applications and projects. \emph{Game Programming Patterns} by Robert \cite{nystrom2014game} provides additional design patterns especially---but not only---for game programming.
+Eric Freeman et al. \cite{freeman2004head} try to equip the readers with a more accessible and practical insight into design patterns for object oriented programming. In contrast to \cite{gamma1995design}, it is more a step by step guide to different design patterns rather than a catalog. Jenifer Tidwell \cite{tidwell2010designing} established design patterns for Interfaces in her book \emph{Designing Interfaces: Patterns for Effective Interaction Design}. This publication provides different possibilities for creating UI elements and how to use them. These are just a few examples of disciplines that adopted the idea of design patterns. 
+
+\section{Design Patterns Structure}
+A really important part of defining design patterns is to find a way to organize them. As seen before, design patterns are not supposed to be used as isolated, single solutions, but as a part of a flexible and connected language. Christopher Alexander et al. \cite{alexander1977pattern} organize the patterns in a sequence, going from big to small, from urban planning to small architectural detail. Each of the patterns is connected to others with regard to larger and smaller scale categories \cite[p.\,10--36]{alexander1977pattern}.  Erich Gamma et al. \cite{gamma1995design} adopt a rather functional approach for categorizing the design patterns which are defined by their purpose (creational, structural or behavioral) and scope (classes or objects). Jenifer Tidwell \cite{tidwell2010designing} uses thematic chapters to organize the patterns like \emph{organizing the content}, \emph{organizing the page}, \emph{showcasing complex data} and many more. The overall structure for this work can be found in the next chapter \ref{sec:patternStructure}. The individual design patterns presented in this work use a uniform template similar to the ones from Erich Gamma et al. \cite[p.\,16--18]{gamma1995design} and Jenifer Tidwell \cite[p.\,42--46]{tidwell2010designing}. This standardized format is supposed to make it easier to extract important information, compare different design patterns and take decisions. The template consists of following points presented in table \ref{tab:designPatternStructure}.
+
+
+
+\begin{table}
+	\centering\small 
+	\begin{tabular}{|p{0.25\textwidth}|p{0.65\textwidth}|}
+		\hline
+		\multicolumn{1}{|c}{\emph{Method}} &
+		\multicolumn{1}{|c|}{\emph{Status}} \\
+		\hline\hline
+		
+		DP [Number]: Pattern Name:    &  Unique number and name of the design pattern (DP).                                                                   \\ \hline
+		\patIntent         & A brief statement of how the pattern works and the issue it is supposed to fix. \\ \hline
+		\patAlsoKnownAs    & Is this approach known by other names as well?                                  \\ \hline
+		\patMotivation     & Illustrates use cases by naming some practical scenarios.                       \\ \hline
+		\patApplicability  & Provides conditions where this pattern is appropriate.                          \\ \hline
+		\patImplementation & Do different applications implement this pattern and how well?                  \\ \hline
+		\patExamples       & Showcases different examples from real projects.                                \\ \hline
+		\patConsequences   & What are the consequences of using this pattern?                                \\ \hline
+		\patRelations      & Other pattern that are connected or dependent on this one.  \\ \hline 
+
+	\end{tabular}
+	\caption{Design Pattern Template.}
+	\label{tab:designPatternStructure}
+\end{table}
+
+
+Another important fact I want to point out here relates to the aspects these patterns do not represent. These points are inspired by Jenifer Tidwell \cite[p.\,42--46]{tidwell2010designing}. The following patterns are neither fundamental principles nor focused on a specific implementation. They are abstract enough to work in a variety of situations. They might be adopted slightly to fit the special purpose. Some of the patterns might work across different engines, applications and even for film productions;  others might not. These patterns are proposals. It is the user's decision if these proposals make sense for the specific project and pipeline. A pattern describes a relation between different components. For instance, using a texture mask is not a design pattern at its own, but how and when to use texture masks in the context of a blending Module is one.  
+
+
+\section{Summary}
+
+As described in this chapter, design patterns provide solutions to recurring problems in a standardized form. The structure or the patterns in the following chapter is inspired by other industries. They form a language of many interlinked objects. The template for the patterns has been defined and contains all the important information. The standardized format makes it easy to compare different patterns and choose between them. Finally, this chapter defined what design patterns are not: they are neither high level abstract principles nor do they define specific low level implementations. 
+

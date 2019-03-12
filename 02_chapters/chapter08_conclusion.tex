@@ -1,0 +1,26 @@
+\chapter{Discussion}\label{cha:discussion}
+
+The main goal of this work was to create a catalog of design patterns to support informed decision making in regard to material layering. Therefore, the patterns in this work contain all the necessary information concerning possibilities for application, expected benefits and consequences. They further provide answers to the most important questions of why, when and how to use different pattern layering methods. Most research focuses on new tools and algorithms \cites{laurent2018efficient, colin2017GearsOfWar, jakob2018labratory} but fails to provide answers to the questions stated above. 
+
+The most important question within this catalog is whether to use a pattern layering method or not. Therefore, two additional non pattern layering design patterns were introduced. The individual patterns were developed and tested during the production of \emph{Letzte Worte} and correspond to my observation in different source files and projects such as \cites{epic2018agora, epic2018chrunch, epic2018soul, epic2018infinity, gears2016coalition, order2015readyatdawns, witcher2015cdproject, paragon2016epic, bookofdead2018, fontainebleu2018}. 
+
+The research and experiments revealed that pattern layering is often used in production to fit the trends of a modern pipeline. Game production seems to develop towards the following tendencies: the asset production is shifting more into the engine \cite{gears2016coalition, paragon2016epic}, the importance of physically plausible shading and blending is growing, procedural and cooperative pipelines are increasing to enable efficient and iterative workflows. This finding does not correspond to from my earlier expectation of performance as main motivation for using pattern layering.  
+
+
+
+  
+\section{Limitations}
+The design patterns within this work were designed for interactive applications with free player movement, i.e., objects can be seen from different distances and angles. This applies for most first person shooters. The requirements in other applications, for instance with static cameras, may differ from those presented in the catalog. Therefore, the catalog may only be applicable  partially. Further, all test were done on PC and with \emph{Unity}\footnote{All test cases  were realized in \emph{Unity} version 2018.13.f1.} and \emph{UE4}.\footnote{The test cases from \emph{Letzte Worte} use \emph{UE4} version 4.19.2. All other examples use \emph{UE4} version 4.20.3.} The patterns are supposed to be largely implementation and platform independent. Nevertheless, there might be certain features that are not supported by either the engine or the platform. For instance, an engine might not support all shader inputs discussed in section \ref{\patCatExternalInputs} of the pattern catalog and so render parts of the catalog irrelevant. If the engine does not support custom shaders or any built-in material layering solutions, the entire catalog might be irrelevant for that specific case. The catalog does focus exclusively on pattern layering, as other layering methods are not used for video game productions yet. A lot of the patterns might work for other layering methods such as BxDF layering as well, but especially the consequences will be different.  
+
+%\section{Conclusion}\label{cha:discussion}
+\section{Conclusion}\label{sec:conclussion}
+ 
+The design patterns presented in this work provide a practical guide to support informed decision making with regard to pattern layering. Available scientific resources do mainly focus on new technologies, algorithms and tools. Industry specific resources---like documentations, tutorial and articles---do mainly focus on problem specific solutions. They generally fail to explain the long term consequences of your decision making.
+ 
+This pattern catalog tries to comprehend pattern layering as a universal and largely pipeline independent approach. I have introduced an abstract, implementation independent description model for pattern layering, the \emph{Material Layering Model} which provides the language necessary to do achieve the former goal.
+
+This pattern catalog represents a first step towards simplifying the decision making process of using and creating pattern layering systems and workflow. Future work should focus on automating this decision making process further and transfer the technical complexity from the artist to the software.
+
+
+
+  

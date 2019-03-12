@@ -1,0 +1,243 @@
+% !TeX document-id = {9c064787-f569-4615-be25-823687019657}
+%%% File encoding: UTF-8
+%% äöüÄÖÜß  <-- no German Umlauts here? Use an UTF-8 compatible editor!
+
+%%% Magic comments for setting the correct parameters in compatible IDEs
+% !TeX encoding = utf8
+% !TeX program = pdflatex 
+% !TeX spellcheck = en_US
+% !BIB program = biber
+
+
+\documentclass[master,english]{hgbthesis}
+\RequirePackage[utf8]{inputenc}		% Remove when using lualatex 
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+%%%%%%%%%%%%%%%%%%% USEPACKAGES %%%%%%%%%%%%%%%%%%
+%Custom usepackages
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{framed, color}		
+
+\usepackage{longtable}
+\usepackage{caption}	% oder capt-of, oder ohne die Zeile mit KOMA-Script-Klasse
+\usepackage{pdfpages} %pdf
+\usepackage{tikz}		
+\usepackage{tabularx,ragged2e}
+
+%%%%%%%%%%%%%%%%%%%%%% DRAFT Infos %%%%%%%%%%%%%%%%
+\newcommand{\NEW}{}
+\newcommand{\TODO}{}
+\newcommand{\NOTE}{}
+%\newcommand{\NEW}{\color{blue}}
+%\newcommand{\TODO}{\color{orange}}
+%\newcommand{\NOTE}{\color{red}NOTE: }
+\newcommand{\MASTERONLY}{}
+\newcommand{\SEMINARONLY}[1]{}
+\newcommand{\ONLINEONLY}[1]{}
+
+
+%%%%%%%%%%%%%%%%%%% Structure %%%%%%%%%%%%%%%%%%
+\newcommand{\PatternCateogryHeadMain}{\section}
+\newcommand{\PatternCateogryHeadSec}{\subsection}
+\newcommand{\PatternCateogryHeadTer}{\subsubsection}
+\newcommand{\PatternCateogryHeadQua}{\subsubsection}
+
+%%%%%%%%%%%%%%%%% Design Pattern %%%%%%%%%%
+\newcommand{\patIntent}{Intent}
+\newcommand{\patMotivation}{Motivation}
+\newcommand{\patApplicability}{Applicability}
+\newcommand{\patImplementation}{Implementation}
+\newcommand{\patExamples}{Examples}
+\newcommand{\patConsequences}{Consequences}
+\newcommand{\patRelations}{Related Patterns}
+\newcommand{\patAlsoKnownAs}{Also Known As}
+\newcommand{\visual}{Visual Qualities}
+\newcommand{\performance}{Performance}
+\newcommand{\pipeline}{Pipeline (Workflow)}
+
+%%%%%%%%%%%%%% Pattern Catalogue
+	%pattern layering	 
+	\newcommand{\patTitle}{Pattern Layering}
+	\newcommand{\patPatternLayering}{DP 01: Pattern Layering}
+	\newcommand{\patPatternLayeringHybrid}{DP 02: Hybrid Pattern Layering}
+	%alternatives
+	\newcommand{\patCatAlternatives}{Alternatives}
+		\newcommand{\patAlternativeBaked}{DP 03: Baked Texture Maps}
+		\newcommand{\patAlternativeDifferentMatierals}{DP 04: Different Materials}
+		%\newcommand{\patAlternativeTrim}{Trim Sheets}
+	%shading Model
+	\newcommand{\patCatShaderModel}{Shading Model}
+		\newcommand{\patCatShaderImplementation}{Shader Implementation}
+		% shader implementation
+			\newcommand{\patImplementationBUildtIn}{DP 05: Built-in Shader}
+			\newcommand{\patImplementationCustomShader}{DP 06: Custom Shader}
+		%workflow
+		\newcommand{\patCatWorkflow}{Workflow}
+			\newcommand{\patWorkflowUberShader}{DP 07: Uber Shader}
+			\newcommand{\patWorkflowIndividualShader}{DP 08: Individual Shader}
+			\newcommand{\patWorkflowContentDrivenShader}{DP 09: Content Generated Shader}
+			
+	%layering Components 
+	\newcommand{\patCatLayeringComponent}{Layering Components}
+		%materialContainer
+		\newcommand{\patCatMaterialContainer}{Material Container}
+			%Granularity
+			\newcommand{\patCatGranularity}{Granularity}
+				\newcommand{\patGranularityBase}{DP 10: Base Material}
+				\newcommand{\patGranularityVariation}{DP 11: Material Variation}
+			%Complexitiy 
+			\newcommand{\patCatComplexity}{Complexity}
+				\newcommand{\patComplexityFulMaterial}{DP 12: Full Material}
+				\newcommand{\patComplexitMaterialModulation}{DP 13: Modulation Layer}
+			% creation
+			\newcommand{\patCatCreation}{Creation}
+				\newcommand{\patCreationInputDefined}{DP 14: Input Based}
+				\newcommand{\patCreationProcedural}{DP 15: Semi Procedural}
+				%\newcommand{\patCreationTextures}{Textures}
+				%\newcommand{\patCreationProcedural}{Procedural}
+				%\newcommand{\patCreationHybrid}{Hybrid}
+				%\newcommand{\patCreationManipulate}{Material Layer}
+		%Masking Container
+		\newcommand{\patCatMaskingContainer}{Masking Container}
+			\newcommand{\patCatMaskingCreation}{Creation}
+				\newcommand{\patMaskingCreationInpt}{DP 16: Texture Based}
+				\newcommand{\patMaskingCreationProcedural}{DP 17: Procedural}
+			%\newcommand{\patCatMaskingInputs}{Inputs}
+				%\newcommand{\patMaskingInputsDefined}{Defined}
+				%\newcommand{\patMaskingInputsProcedural}{Procedural}
+				%\newcommand{\patMaskingInputsObject}{Object Data}
+				%\newcommand{\patMaskingInputsMesh}{Mesh Data}
+				%\newcommand{\patMaskingInputsScene}{Scene Data}
+		%Blend Module
+		\newcommand{\patCatBlendingModule}{Blending Module}
+			\newcommand{\patCatBlending}{Blending Module}
+				\newcommand{\patBlendingFull}{DP 18: Physical Material Blend}
+				\newcommand{\patBlendingPartially}{DP 19: Custom Material Blend}
+	%External Inputs  Container
+	\newcommand{\patCatExternalInputs}{External Inputs}
+		\newcommand{\patCatParameters}{Parameters}
+			\newcommand{\parParametersTextures}{DP 20: Textures}
+			\newcommand{\parParametersVariables}{DP 21: Variables}
+			\newcommand{\parParametersScripted}{DP 22: Scripted Parameters}
+		\newcommand{\patCatMeshData}{Mesh Data}
+			\newcommand{\patMeshDataUVs}{DP 23: UV Coordinates}
+			\newcommand{\patMeshVertexColor}{DP 24: Vertex Color}
+			%\newcommand{\patMeshDataVectors}{Vectors}
+		\newcommand{\patCatObjectData}{Object Data}
+			\newcommand{\patObjectDataVectors}{DP 25: Vectors}
+			%\newcommand{\patObjectData}{...}
+%		\newcommand{\patCatSceneData}{Scene Data}
+%			\newcommand{\patSceneDataObjects}{DP: Scene Objects}
+%			\newcommand{\patSceneWSVectors}{DP: World Space Coordinates}
+%			\newcommand{\patSceneParameters}{DP: Global Parameter}
+%		\newcommand{\patMaterialLayerOjbect}{DP: Material Layer}
+%		
+\newlist{myItemize}{itemize}{9}
+\setlist[myItemize,1]{label=\roman*}
+\setlist[myItemize,2]{label=\roman*}
+\setlist[myItemize,3]{label=\roman*}
+\setlist[myItemize,4]{label=\roman*}
+\setlist[myItemize,5]{label=\roman*}
+\setlist[myItemize,6]{label=\roman*}
+\setlist[myItemize,7]{label=\roman*}
+
+%%%%%%%%%%%%%% Counter %%%%%%%%%%%%%%%
+\newcounter{patternCount}
+\newcommand{\CountString}{\stepcounter{patternCount}}
+\newcounter{patternCount2}
+\newcommand{\CountStringTwo}{\stepcounter{patternCount2}\arabic{patternCount2}}%important to 
+\newcommand{\layerCategorySec}{layer}
+
+%%%%%%%%%%%%%%%%%%%%%%% Pattern Environment Variables
+\newenvironment{patternPoint}[1]{\subsubsection*{#1}}
+
+\makeatletter 
+\newcommand\mynobreakpar{\par\nobreak\@afterheading} 
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%% Quotes %%%
+\newenvironment{itquote}
+{\begin{quote}}
+{\end{quote}}
+
+
+\graphicspath{{images/}}    % location of images and graphics
+\logofile{logo}				% logo file = images/logo.pdf 
+\bibliography{references,reference_Books,reference_Images,reference_Online,reference_ue_docu,reference_software}  	% name of bibliography file (references.bib)
+
+%%%----------------------------------------------------------
+% Title page entries
+%%%----------------------------------------------------------
+
+%%% Entries for ALL types of work: --------------------------
+\title{Defining Design Patterns for Pattern Based Material Layering in Real-Time Engines}
+\author{Matthias\ Patscheider}
+\programname{Digital Arts}
+\placeofstudy{Hagenberg}
+\dateofsubmission{2018}{11}{27}	% {YYYY}{MM}{DD}
+
+%%% Entries for Bachelor theses only: -----------------------
+\thesisnumber{1610628009}   %e.g. 1310238045-A  
+% (Stud-ID, A = 1st Bachelor thesis)
+\semester{Fall Semester 2018} 	% Fall/Spring Semester YYYY
+%\coursetitle{Introduction to Trivial Problems 1} 
+\advisor{Michael Lankes, Dr.}
+
+%%% Restricted publication license instead of CC (master only):
+
+%%%%%% compile only single chapter %%%%%%
+%\includeonly{chapters/chapter06_designPatterns}
+
+
+%%%----------------------------------------------------------
+\begin{document}
+%%%----------------------------------------------------------
+
+%%%----------------------------------------------------------
+\frontmatter							% title part (roman page numbers)
+%%%----------------------------------------------------------
+
+\maketitle
+\tableofcontents
+
+\include{01_front/abstract}
+\include{01_front/kurzfassung}
+
+%%%----------------------------------------------------------
+\mainmatter          			% main part (arabic page numbers)
+%%%----------------------------------------------------------
+
+
+
+%\include{chapters/info}
+\include{02_chapters/chapter01_introduction}
+\include{02_chapters/chapter02_definitions} 					% RealTimeDefinitions
+\include{02_chapters/chapter03_materialLayering} 				% Material Blending
+\include{02_chapters/chapter04_layeringComponents}			% Material Blending 2 
+\include{02_chapters/chapter05_implementation}				% Implemen
+\include{02_chapters/chapter06_designPatterns} 				% Design Patterns
+\include{02_chapters/chapter07_catalogue}
+%%%% Conclusion
+\include{02_chapters/chapter08_conclusion}
+
+%%%----------------------------------------------------------
+\appendix                                         % appendix 
+%%%----------------------------------------------------------
+
+\include{03_back/appendix_a_patternList}	% chronological list of changes
+
+%%%----------------------------------------------------------
+\MakeBibliography                        				% references
+%%%----------------------------------------------------------
+ 
+%%% special page for checking print size --------------------
+%\include{back/printbox}
+
+%%%----------------------------------------------------------
+\end{document}
+%%%----------------------------------------------------------
+
